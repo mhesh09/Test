@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Second Program</title>
+</head>
+<body>
+
+
+
+<h1>Please go through the code. Becasue of not having private domain and proper  api. All I have demonstrate code only.</h1>
+
+</body>
+<script type="text/javascript">
+	
+
+//Below is a JavaScript program that sends three different post requests to a server and returns data at the same time using the Fetch API.
+
+// define the post request URLs
+const req1 = 'https://example.com/request1';
+const req2 = 'https://example.com/request2';
+const req3 = 'https://example.com/request3';
+
+// define the post request body
+const body1 = {
+  data: 'value1'
+};
+const body2 = {
+  data: 'value2'
+};
+const body3 = {
+  data: 'value3'
+};
+
+// send the post requests
+Promise.all([
+  fetch(req1, {
+    method: 'POST',
+    body: JSON.stringify(body1)
+  }),
+  fetch(req2, {
+    method: 'POST',
+    body: JSON.stringify(body2)
+  }),
+  fetch(req3, {
+    method: 'POST',
+    body: JSON.stringify(body3)
+  })
+])
+.then(responses => {
+console.log(response.body);
+});
+
+</script>
+
+</html>
