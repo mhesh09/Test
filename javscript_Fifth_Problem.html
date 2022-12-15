@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fifth Problem</title>
+</head>
+<body>
+
+<h2>Which color of Car do you like?</h2>
+
+
+<label>Red</label>
+<input type="checkbox" id="s1" class="lg" value="Red">
+
+<label>Orange</label>
+<input type="checkbox" id="s2" class="lg" value="Orange">
+ 
+
+<button onclick="submit()">Submit</button>
+
+
+<p>Select a fruit from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+  <option value="Apple">Apple</option>
+  <option value="Mango">Mango</option>
+  <option value="Banana">Banana</option>
+  <option value="Orange">Orange</option>
+</select>
+
+
+<p id="demo"></p>
+
+
+
+</body>
+
+<script type="text/javascript">
+	
+	function submit()
+	{
+		var Red = document.getElementById("s1");
+		var Orange = document.getElementById("s2");
+	
+		if(Red.checked == true)
+		{
+			alert(Red.value);
+		}else if (Orange.checked == true)
+		{
+			alert(Orange.value);
+		}else if(Red.checked == false && Red.checked ==false ) 
+		{	
+			alert("Neither of you have choose.");
+		}
+		else if(Red.checked == true && Orange.checked == true ){
+			alert("Both options has been choosed");
+		}
+	}
+
+
+	function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+
+
+</script>
+
+
+</html>

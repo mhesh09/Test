@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fourth Problem</title>
+</head>
+<body>
+
+	<h1> Please Check the Answer in the console. For reference of data I have used reqbin.com</h1>
+
+	<h2>For Javascript ajax</h2>
+	<button onclick="myFunction()" >Click to start the XML Request</button>
+
+	<br>
+	<h2>For get request from fetch</h2>
+	<button onclick="anotherFunction()">Click for get request</button>
+
+</body>
+
+<script type="text/javascript">
+	
+
+	function myFunction()
+	{
+			
+		var xhr = new XMLHttpRequest();
+
+
+
+		var url = 'https://reqbin.com/echo/get/json';
+        xhr.open("GET", url, true);
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+            }
+        }
+
+        xhr.send();
+
+	}
+
+
+	function anotherFunction()
+	{
+		fetch('https://reqbin.com/echo/get/json', {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+    },
+}).then(response => response.text()).then(text => console.log(text))
+	}
+
+
+</script>
+
+
+</html>
